@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Silêncio de Victor</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2589/2589175.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #555555;
+            --highlight-color: #999999;
+            --border-color: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Lora', serif;
+            line-height: 2.4;
+            overflow-x: hidden;
+            cursor: none; /* Cursor personalizado para aumentar a imersão */
+        }
+
+        /* Cursor Personalizado (Ponto de Luz que se apaga) */
+        #custom-cursor {
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+        }
+
+        /* Fundo com Ruído e Distorção */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); /* Textura subtil de ruído */
+            opacity: 0.05;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .vignette {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, black 90%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .main-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 200px 25px;
+            position: relative;
+            z-index: 3;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 200px;
+            opacity: 0;
+            filter: blur(10px);
+            animation: emerge 5s forwards;
+        }
+
+        @keyframes emerge {
+            to { opacity: 1; filter: blur(0); }
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 3rem;
+            color: var(--highlight-color);
+            letter-spacing: -3px;
+            font-weight: 400;
+        }
+
+        .content-section {
+            margin-bottom: 180px;
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateY(20px);
+            transition: all 3s ease;
+        }
+
+        .content-section.visible {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+
+        p {
+            margin-bottom: 50px;
+            font-size: 1rem;
+            text-align: justify;
+            letter-spacing: 1px;
+            color: #444;
+        }
+
+        .highlight {
+            color: #777;
+            text-shadow: 0 0 8px rgba(255,255,255,0.05);
+        }
+
+        .quote-box {
+            padding: 80px 0;
+            margin: 100px 0;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            opacity: 0.5;
+        }
+
+        .footer-final {
+            text-align: center;
+            margin-top: 250px;
+            opacity: 0.3;
+        }
+
+        .footer-final h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 1.8rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+        }
+
+        .btn-music {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: transparent;
+            border: none;
+            color: #222;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            cursor: pointer;
+            z-index: 100;
+            text-transform: uppercase;
+        }
+
+        /* Efeito de Ondas Sombrias */
+        .wave {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, #050505);
+            z-index: 4;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="custom-cursor"></div>
+    <div class="overlay"></div>
+    <div class="vignette"></div>
+    <div class="wave"></div>
+
+    <button class="btn-music" onclick="toggleMusic()">[ Presença ]</button>
+    <audio id="bgMusic" loop>
+        <!-- Música ambiente de frequência baixa e melancólica -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="main-container">
+        <header>
+            <p style="font-size: 0.6rem; letter-spacing: 12px; margin-bottom: 30px;">Luisa
+            </p>
+            <div class="content-section">
+        <p>Eu não insisti que você ficasse por medo de ficar sozinho. Eu insisti porque vi em você algo que a gente não encontra tão fácil. <span class="highlight">Eu vi em você pureza</span>.</p>
+        <p>Mas eu sempre senti que me entregava mais. Eu sempre senti que, quando havia um problema, o problema era meu, o problema era eu. Era porque eu era inseguro, porque tinha ciúmes demais... Mas esse zelo vinha de um lugar que só nós dois conhecemos.</p>
+    </div>
+
+    <div class="quote-box">
+        "Fomos o primeiro capítulo um do outro, a descoberta de um mundo que ninguém mais poderá reescrever."
+    </div>
+
+    <div class="content-section">
+        <p>Tentei te fazer enxergar que festa não é tudo, rolê não é tudo. Gastar, ostentar... viver não é só isso. Eu tentei construir algo real, tentei viver com você ao meu lado para o resto da vida. Eu honrei a nossa história, desde o primeiro momento em que nos entregamos um ao outro, acreditando que aquele vínculo era sagrado.</p>
+        <p>Mas parece que nada do que eu fiz foi suficiente. Sabe, me dói. Me dói ver você buscando em tatuagens apressadas ou em seguidores novos uma liberdade que, no fundo, parece apenas uma fuga de si mesma.</p>
+    </div>
+
+    <div class="content-section">
+        <p>Ver o que você tem feito nos últimos dias parece uma facada no meu peito. A ligação às duas da manhã, a viagem que não aconteceu, o barulho das redes sociais... Tudo parece um esforço enorme para mostrar que nada aconteceu. <span class="highlight">Sinto como se eu fosse o intervalo entre as tuas distrações.</span></p>
+    </div>
+
+    <div class="content-section">
+        <p>Eu perdi contatos de anos para te proteger de desrespeitos. E hoje, vejo você ao lado de quem nunca nos deu valor. Alguém que apareceu no seu aniversário com o seu próprio dinheiro e foi aceita de volta como se nada tivesse ocorrido. Minha indignação nunca foi controle, foi cuidado. Eu não queria que você fosse usada por quem não tem um terço da sua alma.</p>
+    </div>
+
+    <div class="quote-box">
+        "O amor é um sentimento, mas a relação é uma construção de escolhas diárias."
+    </div>
+
+    <div class="content-section">
+        <p>Você já é adulta. Sabe o que faz e sabe as pessoas que quer ter ao redor. Eu te amei com uma intensidade que talvez tenha te assustado, mas aparentemente o amor não é tudo, né?</p>
+        <p>O que mantém uma relação é o perdão, o entendimento, a compreensão. É ouvir e ser ouvido. E me dói perceber que, enquanto eu gritava por nós, você já estava em silêncio.</p>
+    </div>
+
+        <footer class="footer-final">
+            <h2><p>Espero que você encontre o que procura, mesmo que agora eu saiba que não sou eu.</p>
+                 Adeus.</h2>
+            <p style="margin-top: 50px; font-size: 0.7rem; color: #111;">V.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Cursor personalizado
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Intersection Observer para revelação fantasmagórica
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.content-section').forEach(el => observer.observe(el));
+
+        // Controle de música
+        const music = document.getElementById('bgMusic');
+        function toggleMusic() {
+            if (music.paused) { 
+                music.play(); 
+                document.querySelector('.btn-music').innerText = "[ Eco ]";
+            } else { 
+                music.pause(); 
+                document.querySelector('.btn-music').innerText = "[ Presença ]";
+            }
+        }
+    </script>
+</body>
+</html>
