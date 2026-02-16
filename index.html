@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Silêncio de Victor</title>
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2589/2589175.png">
+    <title>Meu Silêncio</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1077/1077035.png">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -26,13 +26,12 @@
             font-family: 'Lora', serif;
             line-height: 2.4;
             overflow-x: hidden;
-            cursor: none; /* Cursor personalizado para aumentar a imersão */
+            cursor: none;
         }
 
-        /* Cursor Personalizado (Ponto de Luz que se apaga) */
         #custom-cursor {
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             position: fixed;
@@ -42,14 +41,13 @@
             transition: transform 0.1s ease;
         }
 
-        /* Fundo com Ruído e Distorção */
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); /* Textura subtil de ruído */
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
             opacity: 0.05;
             z-index: 1;
             pointer-events: none;
@@ -61,15 +59,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, transparent 20%, black 90%);
+            background: radial-gradient(circle, transparent 20%, black 95%);
             z-index: 2;
             pointer-events: none;
         }
 
         .main-container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
-            padding: 200px 25px;
+            padding: 150px 25px;
             position: relative;
             z-index: 3;
         }
@@ -96,11 +94,11 @@
         }
 
         .content-section {
-            margin-bottom: 180px;
+            margin-bottom: 120px;
             opacity: 0;
             filter: blur(5px);
             transform: translateY(20px);
-            transition: all 3s ease;
+            transition: all 2.5s ease;
         }
 
         .content-section.visible {
@@ -110,10 +108,10 @@
         }
 
         p {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-size: 1rem;
             text-align: justify;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             color: #444;
         }
 
@@ -123,8 +121,8 @@
         }
 
         .quote-box {
-            padding: 80px 0;
-            margin: 100px 0;
+            padding: 60px 0;
+            margin: 80px 0;
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-size: 1.4rem;
@@ -138,15 +136,29 @@
         .footer-final {
             text-align: center;
             margin-top: 250px;
-            opacity: 0.3;
+            opacity: 0.6; /* Aumentado de 0.3 para 0.6 */
+            transition: opacity 2s ease;
+        }
+
+        .footer-final.visible {
+            opacity: 0.8;
         }
 
         .footer-final h2 {
             font-family: 'Playfair Display', serif;
             font-weight: 400;
-            font-size: 1.8rem;
-            letter-spacing: 10px;
+            font-size: 1.8rem; /* Aumentado ligeiramente */
+            letter-spacing: 12px;
             text-transform: uppercase;
+            color: #888; /* Mais visível que o anterior */
+        }
+
+        .signature {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 6px;
+            font-weight: bold;
         }
 
         .btn-music {
@@ -163,17 +175,15 @@
             text-transform: uppercase;
         }
 
-        /* Efeito de Ondas Sombrias */
         .wave {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 100px;
-            background: linear-gradient(transparent, #050505);
+            height: 150px;
+            background: linear-gradient(transparent, #000);
             z-index: 4;
         }
-
     </style>
 </head>
 <body>
@@ -185,72 +195,119 @@
 
     <button class="btn-music" onclick="toggleMusic()">[ Presença ]</button>
     <audio id="bgMusic" loop>
-        <!-- Música ambiente de frequência baixa e melancólica -->
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
+        <source src="https://www.s3" type="audio/mpeg">
     </audio>
 
     <div class="main-container">
         <header>
-            <p style="font-size: 0.6rem; letter-spacing: 12px; margin-bottom: 30px;">Luisa
-            </p>
+            <p style="font-size: 0.6rem; letter-spacing: 12px; margin-bottom: 30px; color: #222;">Amor</p>
+            <h1>E a Neneca?</h1>
+        </header>
+
+        <div class="content-section">
+            <p>Eu não insisti que você ficasse por medo de ficar sozinho. Eu insisti porque vi em você algo que a gente não encontra tão fácil. Eu vi em você <span class="highlight">pureza</span>.</p>
+            <p>Mas eu sempre senti que me entregava mais. Eu sempre senti que, quando havia um problema, o problema era meu, o problema era eu. Você dizia que era porque eu era inseguro, porque tinha ciúmes demais...</p>
+        </div>
+
+        <div class="quote-box">
+            "Tentei curar o que já não tinha cura."
+        </div>
+
+        <div class="content-section">
+            <p>Tentei te fazer enxergar que festa não é tudo, rolê não é tudo. Gastar, ostentar... viver não é só isso. É incrível, mas não é tudo. Eu tentei construir algo real, tentei viver com você ao meu lado para o resto da vida.</p>
+            <p>Mas parece que nada do que eu fiz foi suficiente. Sabe, me dói. Me dói muito, muito, muito... a ponto de eu não saber o que fazer, a ponto de me ver perdido. <span class="highlight">Eu me entreguei e me afundei.</span></p>
+        </div>
+
+        <div class="content-section">
+            <p>Ver o que você tem feito nos últimos dias parece uma facada no meu peito. As pessoas que você tem seguido, as fotos que tem postado... Eu tenho tentado evoluir e amadurecer, que era o que precisávamos, né?</p>
+            <p>E parece que você simplesmente seguiu sua vida como se nada tivesse acontecido. Me sinto hoje, como apenas um intervalo entre as tuas distrações. Me sinto como uma "experiência" que não deu certo e foi deixada de lado. Eu tentava ajustar as coisas, te dizia tudo o que me fazia mal, tentava melhorar no que te fazia mal.</p>
+            <p>Até que as esperanças se foram. Senti que não poderia me abrir, pois iríamos discutir, então apenas deixei essas coisas ruins guardadas dentro de mim, num lugar profundo.</p>
+        </div>
+
+
+        <div class="content-section">
+            <p>Eu te vi como única, te vi como mãe dos meus filhos. Apesar dos seus erros, você para mim era perfeita. Enquanto estávamos juntos, eu só tinha olhos para ti, independentemente de brigas, erros, discussões ou noites mal dormidas. Eu só conseguia ver você, e o que poderíamos construir e evoluir juntos.</p>
+            <p>Você foi o meu porto seguro, e talvez tenha sido esse o meu erro. Deixar de fazer coisas de que gostava para te ver bem, abrir mão de amigos, de lugares, de experiências, às vezes até da família, para estar contigo, para criarmos memórias e para fazer você sentir o amor que eu sentia.</p>
+        </div>
+
+        <div class="quote-box">
+            "Era um sentimento que transbordava."
+        </div>
+
+        <div class="content-section">
+            <p>Eu não me culpo por ter deixado tanta coisa de lado, porque afinal era o que eu queria: você. E não se sinta culpada. Só quero te mostrar que eu também tive oportunidades, mas sempre preferi você.</p>
+            <p>Eu sou um homem bom, e tentei te mostrar a minha percepção da vida. Tentei te mostrar a forma como pensava, me abri, chorei na sua frente, e tudo isso sempre foi muito real.</p>
+        </div>    
+
+        <div class="content-section">    
+            <p>Para ser sincero, sinto falta da neneca. Aquela menina que os olhos brilhavam ao me ver, que era meiga, envergonhada, a menina a quem dei um beijinho no rosto no corredor e a partir dali descobri que eu conseguia amar.</p>
+        </div>
+
+        <div class="content-section">
+            <p>Mas tudo bem. Eu sei que fui importante para você, e você foi muiNto importante para mim. </p>
+            <p>Lembra que perdi o contato com um amigo de muitos anos para te ver bem? Porque ele te desrespeitou. E a sua amiga, que me desrespeitava em todas as situações possíveis, você mantém ao seu lado. Alguém que simplesmente apareceu no seu aniversário com o seu próprio dinheiro, deu um presente como se fosse dela, e vocês se tornaram amigas novamente? Minha indignação era saber que você pagava as coisas justamente por causa disso. Nunca foi controle, ciúmes ou possessividade. <span class="highlight">Sempre foi proteção.</span></p>
+        </div>
+
+        <div class="content-section">
+            <p>Eu não posso julgá-la, mas você é uma pessoa boa. Eu espero que os traumas das outras pessoas não interfiram em quem você é, Luisa.</p>
+        </div>
+
+        <div class="content-section">
+            <p>Eu tive medo de te perder, mas nunca foi sobre ficar sozinho. Eu tinha medo porque sabia o meu valor e sabia das coisas por que você tinha passado. Eu só não queria que passasse por tudo de novo. Sabia que em algum momento você perceberia que eu sou um homem que só quis cuidar de você.</p>
+            <p>Eu não queria apenas o seu corpo, ou a sensação de te ter. E sei que muitos veem isso, apenas um corpo lindo, olhos azuis brilhantes e cabelos loiros, acho que você também sabe. Brigamos, discutimos, choramos, se afastamos. Mas quando você precisava de cuidado, eu sempre estive ali. Do meu jeito, às vezes insensível, mas sempre estive ali para te abraçar, para cuidar de você, para te levar uma coca que fosse.</p>
+        </div>
+
+        <div class="content-section">
+            <p>Você foi a minha primeira. Primeira namorada, primeira a entregar flores, primeira mulher com quem dormi, primeiro sexo. Você foi a primeira para quem chorei olhando nos olhos, foi a primeira que eu quis ver a cada instante, a primeira que conseguiu tirar toda a minha ansiedade com um abraço.</p>
+            <p>Você foi a primeira para quem cozinhei, foi a primeira a quem dei presentes, a primeira aliança. E por tudo isso, senti que deveria cuidar de você apesar de tudo, acima de tudo e de todos.</p>
+            <p>As vezes em que chegava cansado, sujo, e cozinhava para você, era porque eu sabia que nem sempre você jantava. As vezes em que me pedia algo e eu não podia comprar, passava no cartão da vó, passava cada coisa num cartão diferente, mas dava um jeito. Foi para te ver bem.</p>
+        </div>
+
+        <div class="quote-box">
+            "A minha proteção foi o teu fardo."
+        </div>
+
+        <div class="content-section">
+            <p>Mas você já é adulta. Sabe o que faz e sabe as pessoas que quer ter ao seu redor. Eu te amei, sou uma pessoa intensa, mas aparentemente o amor não é tudo, não é? O que mantém uma relação é a escolha, é o perdão, o entendimento, a compreensão. É ouvir e ser ouvido.</p>
+            <p><span class="highlight">E o meu sentimento hoje, vendo tudo isto, é que você nunca esteve lá realmente.</span></p>
+            
             <div class="content-section">
-        <p>Eu não insisti que você ficasse por medo de ficar sozinho. Eu insisti porque vi em você algo que a gente não encontra tão fácil. <span class="highlight">Eu vi em você pureza</span>.</p>
-        <p>Mas eu sempre senti que me entregava mais. Eu sempre senti que, quando havia um problema, o problema era meu, o problema era eu. Era porque eu era inseguro, porque tinha ciúmes demais... Mas esse zelo vinha de um lugar que só nós dois conhecemos.</p>
-    </div>
+            <p>Enquanto eu me recolhia num lugar profundo para processar o luto do que éramos, enquanto eu tentava entender como sobreviver sem você, você já estava no pagode. Você celebrava enquanto eu sangrava. Ali eu comecei a entender que os nossos tempos sempre foram diferentes.</p>
+            <p>O pior é perceber que nada mudou de lá para cá. O tempo passou, o girassol murchou, e você continua buscando nas distrações de sempre as respostas que só o cuidado real poderia te dar. Você continua a mesma, enquanto eu tive que me transformar para não sangrar com a sua ausência.</p>
+        </div>
+            
+            <p>Dizem que o tempo cura tudo, mas o tempo também ensina. Hoje, você celebra uma liberdade que eu sempre tentei proteger, cercada por pessoas que não conhecem a nequinha que eu conheci. Eu te darei a liberdade que tanto quis, não por falta de amor, mas por excesso de dignidade, e dor. <span class="highlight">Muita dor.</span> Guarde as memórias, as flores e os sacrifícios, pois o homem que daria a vida por você, hoje finalmente escolheu fazer algo por si mesmo.</p>
+            <p>Talvez nos encontremos em outras vidas, e eu terei outra oportunidade de tentar fazer com que nosso fim seja diferente. Assim como tentei nessa. Mas falhei.</p>
+        </div>
 
-    <div class="quote-box">
-        "Fomos o primeiro capítulo um do outro, a descoberta de um mundo que ninguém mais poderá reescrever."
-    </div>
+        <div class="content-section">
+            Este é o meu último registro. Irei desativar os outros sites, e logo, este também. Não faz mais sentido deixar meu coração aberto para alguém que continua a me machucar.
+        </div>
 
-    <div class="content-section">
-        <p>Tentei te fazer enxergar que festa não é tudo, rolê não é tudo. Gastar, ostentar... viver não é só isso. Eu tentei construir algo real, tentei viver com você ao meu lado para o resto da vida. Eu honrei a nossa história, desde o primeiro momento em que nos entregamos um ao outro, acreditando que aquele vínculo era sagrado.</p>
-        <p>Mas parece que nada do que eu fiz foi suficiente. Sabe, me dói. Me dói ver você buscando em tatuagens apressadas ou em seguidores novos uma liberdade que, no fundo, parece apenas uma fuga de si mesma.</p>
-    </div>
-
-    <div class="content-section">
-        <p>Ver o que você tem feito nos últimos dias parece uma facada no meu peito. A ligação às duas da manhã, a viagem que não aconteceu, o barulho das redes sociais... Tudo parece um esforço enorme para mostrar que nada aconteceu. <span class="highlight">Sinto como se eu fosse o intervalo entre as tuas distrações.</span></p>
-    </div>
-
-    <div class="content-section">
-        <p>Eu perdi contatos de anos para te proteger de desrespeitos. E hoje, vejo você ao lado de quem nunca nos deu valor. Alguém que apareceu no seu aniversário com o seu próprio dinheiro e foi aceita de volta como se nada tivesse ocorrido. Minha indignação nunca foi controle, foi cuidado. Eu não queria que você fosse usada por quem não tem um terço da sua alma.</p>
-    </div>
-
-    <div class="quote-box">
-        "O amor é um sentimento, mas a relação é uma construção de escolhas diárias."
-    </div>
-
-    <div class="content-section">
-        <p>Você já é adulta. Sabe o que faz e sabe as pessoas que quer ter ao redor. Eu te amei com uma intensidade que talvez tenha te assustado, mas aparentemente o amor não é tudo, né?</p>
-        <p>O que mantém uma relação é o perdão, o entendimento, a compreensão. É ouvir e ser ouvido. E me dói perceber que, enquanto eu gritava por nós, você já estava em silêncio.</p>
-    </div>
-
-        <footer class="footer-final">
-            <h2><p>Espero que você encontre o que procura, mesmo que agora eu saiba que não sou eu.</p>
-                 Adeus.</h2>
-            <p style="margin-top: 50px; font-size: 0.7rem; color: #111;">V.</p>
-        </footer>
+        <div class="footer-final content-section">
+            <h2>Adeus.</h2>
+            <div class="signature">V.</div>
+            <div class="signature"></div>
+        </div>
     </div>
 
     <script>
-        // Cursor personalizado
         const cursor = document.getElementById('custom-cursor');
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
 
-        // Intersection Observer para revelação fantasmagórica
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.content-section').forEach(el => observer.observe(el));
 
-        // Controle de música
         const music = document.getElementById('bgMusic');
         function toggleMusic() {
             if (music.paused) { 
